@@ -1,0 +1,18 @@
+<head>
+   <link rel="stylesheet" href="/css/index.css">
+</head>
+<% if (data.isOtpValidated) { %>
+   <h1>logged in! hurray</h1>
+   <p>secret email is <%= data.secretEmail %> </p>
+  
+   <form action="/logout" method="post">
+               <button type="submit">logout</button>
+			</form>
+
+<% } %>
+
+<% if (!data.isOtpValidated) { %>
+   <h1>please login to see your secret email</h1>
+<a href="/otp">click here to login</a>
+<% } %>
+
